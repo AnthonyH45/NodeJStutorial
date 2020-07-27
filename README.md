@@ -39,3 +39,20 @@ Following this guide here: [https://docs.microsoft.com/en-gb/learn/modules/intro
   * "Licensing"
   * "Actively maintained"
 - adding the `--save-dev` flag to `npm install` will add it as a devDependency in `package.json`
+- <b>before</b> updating a library, think about
+  * "Type of update"
+  * "Is the project configured properly and can accomodate it"
+  * "Mitigate security issues"
+- Semantic versioning
+  * <b>1</b>.0.0 => major version, might need to rewrite
+  * 1.<b>2</b>.0 => minor version, mostly safe to update, double check
+  * 1.2.<b>3</b> => patch version, should be safe to update
+  - updating: `npm update <name_of_package>@<optional version number>`
+  - `package.json` configuring for updates
+    * `~` or `1.1.x` => update to latest <b>patch</b>
+      * `~1.0.0` => greater than or equal to this version
+    * `^` or `1.x.1` => updates minor version
+    * `*` or `x.0.0` => update to latest major 
+- `package-lock.json` => guarantees exact installs, like a normal lock file, it stops and prevents modification or deletion of the wrong modules. So it <b>should be committed</b> to the repo
+- `npm outdated` shows whats outdated
+- `npm audit` and `npm audit fix` can fix (or at least attempt) to resovle certain conflicts and issues regarding version numbers and security issues 
