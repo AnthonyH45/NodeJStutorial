@@ -3,8 +3,25 @@ const path = require("path");
 
 async function main() {
     const salesDir = path.join(__dirname,"stores");
+    const salesTotalsDir = path.join(__dirname,"salesTotals");
+
+    // creates salesTotal dir if non existant
+    try {
+        await fs.mkdir(salesTotalsDir);
+    } catch {
+        if (salesTotalDir === null) {
+            console.log(`salesTotalDir already exists`);
+        } else {
+            console.log(`${salesTotalDir} already exists`);
+        }
+    }
+
+    // find all paths to sales files
     const salesFiles = await findSalesFiles(salesDir);
-    console.log(salesFiles);
+
+    // write an empty file called totals.txt
+    await fs.writeFile(path.join(salesTotalsDir, "totals.txt"), String());
+    console.log(`Wrote sales totals to ${salesTotalsDir}`);
 }
 
 async function findSalesFiles(folderName) {
