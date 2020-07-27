@@ -82,3 +82,4 @@ Following this guide here: [https://docs.microsoft.com/en-gb/learn/modules/intro
 - `exec <EXPR>` evaluate expression inside the context, useful for things like `exec i` to find whats inside `i`
 - `CTRL+D` or `exit` to exit
 - `create a launch.json file` is used for debugging and can be shared with coworkers so everyone can debug with the same setup
+- debugging is cool in vscode, to watch variables, just click the plus button and add their name. To set a break point, click the left space next to the line number, to set a conditional breakpoint, right click and hit conditional breakpoint.
