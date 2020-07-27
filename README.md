@@ -30,3 +30,12 @@ Following this guide here: [https://docs.microsoft.com/en-gb/learn/modules/intro
 - invoked using `npm <action>`
 - `git clone https://github.com/MicrosoftDocs/node-essentials.git`
 - then took `node-dependencies/3-exercise-package-json` out
+- dependency is 3rd party reusable library code
+- Things to consider about packages/depencencies/libraries
+  * "Should i write this code?"
+  * "Saving time"
+  * "Maintenance"
+  * "Size"
+  * "Licensing"
+  * "Actively maintained"
+- adding the `--save-dev` flag to `npm install` will add it as a devDependency in `package.json`
