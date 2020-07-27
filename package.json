@@ -1,0 +1,23 @@
+{
+  "name": "nodejstutorial",
+  "version": "1.0.0",
+  "description": "following the Microsoft guide to nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "build": "tsc",
+    "lint": 
+    "test": "echo \"error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyH45/NodeJStutorial.git"
+  },
+  "author": "Anthony",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonyH45/NodeJStutorial/issues"
+  },
+  "homepage": "https://github.com/AnthonyH45/NodeJStutorial#readme"
+}
