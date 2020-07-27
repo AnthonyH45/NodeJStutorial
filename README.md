@@ -27,4 +27,6 @@ Following this guide here: [https://docs.microsoft.com/en-gb/learn/modules/intro
     "<action>" : "command"
 }
 ```
-- 
+- invoked using `npm <action>`
+- `git clone https://github.com/MicrosoftDocs/node-essentials.git`
+- then took `node-dependencies/3-exercise-package-json` out

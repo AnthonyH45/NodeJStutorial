@@ -7,8 +7,7 @@
     "start": "node index.js",
     "test": "jest",
     "build": "tsc",
-    "lint": 
-    "test": "echo \"error: no test specified\" && exit 1"
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
