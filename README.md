@@ -56,3 +56,29 @@ Following this guide here: [https://docs.microsoft.com/en-gb/learn/modules/intro
 - `package-lock.json` => guarantees exact installs, like a normal lock file, it stops and prevents modification or deletion of the wrong modules. So it <b>should be committed</b> to the repo
 - `npm outdated` shows whats outdated
 - `npm audit` and `npm audit fix` can fix (or at least attempt) to resovle certain conflicts and issues regarding version numbers and security issues 
+- Common debugging practices without a debugger
+  * running the program, as it should work, but see whats up
+  * explain the issue to a rubber duck
+  * read the code again
+  * take a break, go for a walk
+  * ~~When in doubt, system.out~~ spam console.log()!!!
+- instead of guessing whats happening, debuggers can walk you through, instrution byt instruction, what the code is doing
+- Debugging process
+  * Identify the bug
+  * Find the culprit code
+  * analyze why its happening
+  * fix it
+  * validate the fix
+- Force javascript debugger, use the `debugger` keyword to force a breakpoint
+- Since debugging gives full access, Node prevents debugging of running code as bad actors can inject arbitrary cod, so instead node has the `inspect` mode (`--inspect` or `--inspect=<HOST>:<PORT>`)
+- avoid using public IPs or `0.0.0.0` as the host as some random can connect and take ur process over
+- use `--inspect-brk` to stop just before the code
+- `node inspect <file>.js`
+- Very similar to GDB, `c` to continue, `n` for next, `s` for step in, same as next, but if the next line is a function, it steps into it, `o` for step out, execute the remaining code and jump back to where we came from, `r` to restart
+- `sb()` to add breakpoint to current line
+- `sb(<N>)` to add breakpoint on line number `N`
+- `cb('file,js',<N>)` clear the breakpoint at line number `N`
+- `list(<N>)` list source code with `N` lines before and after execution point
+- `exec <EXPR>` evaluate expression inside the context, useful for things like `exec i` to find whats inside `i`
+- `CTRL+D` or `exit` to exit
+- `create a launch.json file` is used for debugging and can be shared with coworkers so everyone can debug with the same setup
