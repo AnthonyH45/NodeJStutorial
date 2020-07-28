@@ -1,28 +1,17 @@
 const fs = require("fs").promises
 const path = require("path");
 
-async function main() {
-    const salesDir = path.join(__dirname,"stores");
-    const salesTotalsDir = path.join(__dirname,"salesTotals");
+async function calculateSalesTotal(salesFiles) {
+    let salesTotal = 0;
 
-    // creates salesTotal dir if non existant
-    try {
-        await fs.mkdir(salesTotalsDir);
-    } catch {
-        if (salesTotalDir === null) {
-            console.log(`salesTotalDir already exists`);
-        } else {
-            console.log(`${salesTotalDir} already exists`);
-        }
+    for (file of salesFiles) {
+        const data = JSON.parse(await fs.readFile(file));
+        salesTotal += data.total;
     }
 
-    // find all paths to sales files
-    const salesFiles = await findSalesFiles(salesDir);
-
-    // write an empty file called totals.txt
-    await fs.writeFile(path.join(salesTotalsDir, "totals.txt"), String());
-    console.log(`Wrote sales totals to ${salesTotalsDir}`);
+    return salesTotal;
 }
+
 
 async function findSalesFiles(folderName) {
     // array to save sales.jsons to
@@ -49,6 +38,37 @@ async function findSalesFiles(folderName) {
 
     await findFiles(folderName);
     return salesFiles;
+}
+
+
+async function main() {
+    const salesDir = path.join(__dirname,"stores");
+    const salesTotalsDir = path.join(__dirname,"salesTotals");
+
+    // creates salesTotal dir if non existant
+    try {
+        await fs.mkdir(salesTotalsDir);
+    } catch(e) {
+        //if (salesTotalDir === null) {
+        //    console.log(`salesTotalDir already exists`);
+        //} else {
+            console.log(`${salesTotalsDir} already exists`);
+        //}
+    }
+
+    // find all paths to sales files
+    const salesFiles = await findSalesFiles(salesDir);
+
+    const salesTotal = await calculateSalesTotal(salesFiles);
+
+    // write total to file
+    await fs.writeFile(
+        path.join(salesTotalsDir, "totals.txt"),
+        `${salesTotal}\r\n`,
+        {flag: "a"}
+    );
+
+    console.log(`Wrote sales totals to ${salesTotalsDir}`);
 }
 
 main();
