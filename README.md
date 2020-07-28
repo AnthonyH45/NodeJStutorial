@@ -87,3 +87,21 @@ Following this guide here: [https://docs.microsoft.com/en-gb/learn/modules/intro
 - using the `promise` namespace on the builtin stuff lets you use async and await so we have synchronous code without blocking
 - check if dirs and files exist <b>before</b> creating them.
 - if you need to parse stuff, see if there is a package already. 
+- things to consider when building web apps and APIs
+  * routing
+  * supporting diff content types
+  * authentication/authorization
+  * reading/writing data
+  * time to market
+- HTTP module in Node.JS
+  * http.Server
+  * http.IncomingMessage
+  * http.ServerResponse
+- _streams_ are how data is sent, chunk by chunk
+- Express as the web framework to handle the bigger workload Node has a problem with
+  * Features
+  * abstracts complexity
+  * solves common problems
+  * used by a lot (means support!)
+- HTTP verbs: `POST` , `PUT` , `GET` and more, these are the common ones
+- 
