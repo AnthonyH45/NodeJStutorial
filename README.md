@@ -120,3 +120,6 @@ Following this guide here: [https://docs.microsoft.com/en-gb/learn/modules/intro
   * Read
   * Update
   * Delete
+- Middleware is the stuff thats pre-request, constructs the response, and the post request
+- pre or post request in Express is middleware, shape denoted as `app.use((req,res, next) => {})`
+- <b>NEVER ROLL YOUR OWN CRYPTO</b>, look at OAuth, JWT, `bcrypt` library
