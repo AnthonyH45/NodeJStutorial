@@ -104,4 +104,19 @@ Following this guide here: [https://docs.microsoft.com/en-gb/learn/modules/intro
   * solves common problems
   * used by a lot (means support!)
 - HTTP verbs: `POST` , `PUT` , `GET` and more, these are the common ones
-- 
+- route parameters = `/products/123`
+- query parameters = `/products?sort=desc`
+- URL syntax: `scheme:[//authority]path[?query][#fragment]`
+  * scheme: protocol
+  * authority: 2 things
+    * user info: user@pass OR localhost OR google,microsoft & other domanins
+    * host: 127.0.0.1 OR 1.1.1.1 OR microsoft.com
+  * path: `/blah`
+  * query: `?stuff=more_stuff`, deliminated by `&` or `;`, like `?page=1&pageSize-20`
+  * fragment: More specificity, like sort order, or anchors
+- `/product/1`,`/product/2` => express route pattern of `/product/:id`
+- CRUD is a common web resource, like the express app we just made
+  * Create
+  * Read
+  * Update
+  * Delete
